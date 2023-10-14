@@ -48,26 +48,40 @@ for(string ele : arr1)
 }
 int main(){
     int n=3;
+    int k = 1;
     // pattern(n,n,0,0);
     vector<string>arr1,arr2;
     for(int i=0;i<n;i++){
         string p ="";
-        for(int j =i;j<n;j++ ){
+        int ch=1;
+        bool flag = false;
+        for(int j =0;j<2*n;j++ ){
+            if(flag)
+            p.append(" ");
+            else
             p.append("* ");
+            if( j<ch && j ){
+                flag = true;
+            }
+            else{
+                flag = false;
+            }
+
+
         }
         arr1.push_back(p);
     }
-    int k = newpattern(arr1,1);
-    reverse(arr1.begin(),arr1.end());
-    for(string ele : arr1)
-    {
-        cout<<ele;
-        for(int i = 0;i<k;i++){
-            cout<<" ";
-        }
-        k = k-4;
-        cout<<ele<<endl;
-    }
+    // int k = newpattern(arr1,1);
+    // reverse(arr1.begin(),arr1.end());
+    // for(string ele : arr1)
+    // {
+    //     cout<<ele;
+    //     for(int i = 0;i<k;i++){
+    //         cout<<" ";
+    //     }
+    //     k = k-4;
+    //     cout<<ele<<endl;
+    // }
     // pattern(n,0,1,n);
     
 }
