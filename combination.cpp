@@ -1,4 +1,5 @@
 #include<iostream>
+using namespace std;
 int combine(int n,int r){
     if(r > n) return 0;
     if(r == 0 || n==r) return 1;
@@ -9,12 +10,11 @@ int combine(int n,int r){
     }
     return res/div;
 }
-using namespace std;
 int main(){
     int n , k;
-    cout<<"The number n : ";
+    cout<<"The number number of persons : ";
     cin>>n;
     cout<<"The number of teams: ";
     cin>>k;
-    cout<<"The combinations to form friendship is  : "<<combine(n-k+1,2);
+    cout<<"The combinations to form friendship is  : "<<combine(n-k+1,2);//to Maximize the friendship in a teams
 }
