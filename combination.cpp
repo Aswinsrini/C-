@@ -16,5 +16,14 @@ int main(){
     cin>>n;
     cout<<"The number of teams: ";
     cin>>k;
-    cout<<"The combinations to form friendship is  : "<<combine(n-k+1,2);//to Maximize the friendship in a teams
+    cout<<"The combinations to form maximum friendship is  : "<<combine(n-k+1,2)<<endl;;//to Maximize the friendship in a teams
+    //sum of minimum friendship
+    int number  = (n/k),rem = 0;
+    if(n%k != 0){
+        number -=1;
+        rem = k + n%k;
+    }
+    
+    cout<<"The minimum friendship is : "<<number * combine(k,2) + combine(rem,2);
+
 }
