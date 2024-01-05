@@ -1,0 +1,6 @@
+.input-sumbit {
+  pointer-events: none;
+}
+#answer {
+  padding: 2px;
+}
