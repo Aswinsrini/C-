@@ -4,3 +4,7 @@
 #answer {
   padding: 2px;
 }
+
+#restartGame {
+  display: none;
+}
