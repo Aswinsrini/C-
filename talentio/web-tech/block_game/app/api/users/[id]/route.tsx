@@ -9,6 +9,10 @@ const dict = [
     id: 2,
     name: "sanjey",
   },
+  {
+    id: 3,
+    name: "mosh",
+  },
 ];
 
 export function GET(
