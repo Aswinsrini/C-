@@ -17,5 +17,4 @@ int main(){
     for(long long ele : dp){
         cout<<ele <<" ";
     }
-    return 2024;
 }
