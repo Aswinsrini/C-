@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import schema from "../schema";
+import prisma from "@/prisma/client";
+
 const dict = [
   {
     id: 1,
@@ -15,14 +17,17 @@ const dict = [
   },
 ];
 
-export function GET(
+export async function GET(
   request: NextRequest,
-  { params }: { params: { id: number } }
+  { params }: { params: { id: string } }
 ) {
-  if (params.id > 10)
-    return NextResponse.json({ error: "User Not Found!" }, { status: 404 });
-  //   console.log(request);
-  return NextResponse.json(dict.filter((d) => d.id == params.id));
+  const user = await prisma.user.findUnique({
+    where: {
+      id: parseInt(params.id),
+    },
+  });
+  if (!user) return NextResponse.json("The User not found!");
+  return NextResponse.json(user);
 }
 
 //PUT - to update the user
