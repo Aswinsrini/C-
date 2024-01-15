@@ -9,21 +9,28 @@ export default function Home() {
 
   return (
     <main>
+      <Link
+        href="/user"
+        className="p-2 m-5 cursor-pointer font-bold bg-gray-300"
+      >
+        User
+      </Link>
       <div className="m-10">
         {status === "loading" && <div>Loading User Details...</div>}
         {status === "authenticated" && (
           <div>
-            <pre>
+            <Link
+              href="/api/auth/signout"
+              className="border border-solid p-2  bg-green-300 border-r-4 "
+            >
+              Sign out
+            </Link>
+
+            <pre className="m-5">
               Name : {session.user!.name}
               <br></br>
               Email-id : {session.user!.email}
             </pre>
-            {/* <Image
-              src={session.user!.image as string}
-              height={50}
-              width={50}
-              alt="User-Image"
-            /> */}
           </div>
         )}
         {status === "unauthenticated" && (
