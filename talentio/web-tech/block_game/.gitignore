@@ -36,3 +36,7 @@ notes.txt
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+
+.react-email
+.react-email-temp
