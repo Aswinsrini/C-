@@ -24,7 +24,7 @@ int main() {
         cout << calculate(b, g, "BG", "B");
     } else if (b < g) {
         cout << calculate(g, b, "GB", "G");
-    } else {
+    } else {    
         cout << calculate(g, b, "GB", "aswin");
     }
 
