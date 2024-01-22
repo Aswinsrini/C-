@@ -2,6 +2,7 @@
 import { useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
+import Dashboard from "../components/useContext/first";
 
 export default function Home() {
   const { status, data: session } = useSession();
@@ -9,7 +10,8 @@ export default function Home() {
 
   return (
     <main>
-      <Link
+      <Dashboard />
+      {/* <Link
         href="/user"
         className="p-2 m-5 cursor-pointer font-bold bg-gray-300"
       >
@@ -41,7 +43,7 @@ export default function Home() {
             Sign with Google
           </Link>
         )}
-      </div>
+      </div> */}
     </main>
   );
 }
