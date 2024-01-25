@@ -1,8 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 int main(){
-    bitset<8>b("00001010");
-    for(int i = 0;i<8;i++){
-        cout<<b[i];
-    }
+    int n = 12;
+    bitset<8>b(n);
+    cout<<"all bits are set "<<b.all();
+    cout<<"count all the bits are set "<<b.count();
 }
