@@ -3,22 +3,23 @@ import { useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import Dashboard from "../components/useContext/first";
+import { UserButton } from "@clerk/nextjs";
 
 export default function Home() {
   const { status, data: session } = useSession();
-  // if (status === "loading") return null;
+  if (status === "loading") return null;
 
   return (
     <main>
       <Dashboard />
-      {/* <Link
+      {/* <UserButton afterSignOutUrl="/" /> */}
+      <Link
         href="/user"
         className="p-2 m-5 cursor-pointer font-bold bg-gray-300"
       >
         User
       </Link>
       <div className="m-10">
-        {status === "loading" && <div>Loading User Details...</div>}
         {status === "authenticated" && (
           <div>
             <Link
@@ -43,7 +44,7 @@ export default function Home() {
             Sign with Google
           </Link>
         )}
-      </div> */}
+      </div>
     </main>
   );
 }
