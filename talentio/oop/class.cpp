@@ -1,21 +1,47 @@
 #include<bits/stdc++.h>
 using namespace std;
-class Parent{
-    protected:
-    int x;
-    void print(){
-        cout<<"Parent "<<x<<endl;
+// class Parent{
+//     protected:
+//     int x;
+//     void print(){
+//         cout<<"Parent "<<x<<endl;
+//     }
+// };
+// class Child : public Parent{
+//     public:
+//     void print(){
+//         Parent::print();
+//         cout<<"Child "<<x;
+//         }
+// };
+// int main(){
+//     Child c;
+//     c.print();
+
+// }
+
+class Increment{
+    int val = 0;
+    public:
+    void operator++(){
+        val++;
     }
 };
-class Child : public Parent{
+
+class Main{
     public:
+    int val;
+    Main(){
+        val = 10;
+    }
     void print(){
-        Parent::print();
-        cout<<"Child "<<x;
-        }
+        cout<<val<<endl;
+    }
 };
 int main(){
-    Child c;
-    c.print();
+    Main ob;
+    ob.print();
 
+    Increment i;
+    ++i;
 }
