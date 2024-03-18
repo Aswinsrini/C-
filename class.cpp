@@ -67,20 +67,65 @@
 // 	return 0;
 // }
 
-#include <bits/stdc++.h>
-using namespace std;
-int main()
-{
-   map<char,int>a;
-  string s,w;
-	
-    cin>>s;
-	  for(int i=0;i<s.length();i++)
-     { 
-      a[s[i]]++;
+// #include<iostream>
+// using namespace std;
+
+// class A{
+//   public:
+//   int val;
+//   A(int val){
+//     this->val= val;
+//   }
+//   void print(){
+//     cout << val;
+//   }
+// };
+// class B : public A{
+//   public:
+//   int val;
+//   B(int val) : A(val){
+//     this->val= 10;
+//   }
+//   void print() {
+//     A::print();
+//     cout <<val;
+//   }
+// };
+// int main(){
+//   B a =  B(100);
+//   a.print();
+// }
+
+
+
+#include <iostream>
+
+
+class Base {
+public:
+    virtual void display() {
+        std::cout << "Base class display()" << std::endl;
     }
- map<char,int> ::iterator m;
- for(m=a.begin();m!=a.end();m++)
- { cout<<m->first<<" "<<m->second<<endl;  }
-return 0;
+};
+
+class Derived : public Base {
+public:
+    // Function hiding (overriding without virtual functions)
+    void display() {
+        std::cout << "Derived class display()" << std::endl;
+    }
+};
+
+int main() {
+    Base baseObj;
+    baseObj.display();  // Calls Base class display()
+
+    Derived derivedObj;
+    // derivedObj.display();  // Calls Derived class display()
+
+    // // Using a pointer to demonstrate polymorphism
+    Base* ptr = &derivedObj;
+    ptr->display();  // Calls Base class display() due to function hiding
+
+    return 0;
 }
