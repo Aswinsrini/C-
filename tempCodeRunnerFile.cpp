@@ -1,2 +1,4 @@
-cross_word(a,i,j+1,n+1);
-                        cout<<"1"<<endl;
+if(pos != string::npos){
+        cout<< pos;
+    }
+    else    cout<< "not found";
